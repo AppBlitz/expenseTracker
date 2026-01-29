@@ -3,12 +3,16 @@
  */
 package org.example;
 
+import org.example.cli.Expense;
+
+import picocli.CommandLine;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        CommandLine cmd = new CommandLine(new Expense());
+        cmd.execute(args);
+
     }
+
 }
